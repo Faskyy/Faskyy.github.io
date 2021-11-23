@@ -1,0 +1,229 @@
+.wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+.content {
+  position: fixed;
+  top: 40%;
+  left: 35%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+
+.intro-hello p {
+  width: 700px;
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  float: left;
+  margin-right: 50px;
+}
+
+.widget {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  transition: 0.6s;
+}
+.open.widget {
+  right: 35px;
+}
+a {
+  color: inherit;
+}
+#chatme {
+  background-color: #487b8f;
+  color: white;
+  border: none;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  transition: 0.4s;
+  box-shadow: 0 0 0 0 #ccbdc5;
+  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  z-index: 999;
+}
+@-webkit-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);
+  }
+}
+@-moz-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);
+  }
+}
+@-ms-keyframes pulse {
+  to {
+    box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);
+  }
+}
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);
+  }
+}
+
+#chatme:hover {
+  animation: paused;
+}
+#chatme:focus {
+  outline: none;
+}
+
+#chatme svg,
+.socials > div svg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  fill: white;
+}
+.socials > div svg {
+  width: 16px;
+  height: 16px;
+}
+#chatme .close {
+  opacity: 0;
+  transition: 0.3s;
+}
+#chatme .chat {
+  opacity: 1;
+  transition: 0.3s;
+}
+.open #chatme .close {
+  opacity: 1;
+  transition: 0.3s;
+}
+.open #chatme .chat {
+  opacity: 0;
+  transition: 0.3s;
+}
+.open #chatme {
+  transform: rotate(45deg);
+}
+.widget:not(.open) .socials {
+  transform: scale(0);
+}
+.socials {
+  position: relative;
+  transition: 0.4s;
+  background: rgba (0, 0, 0, 0.3);
+}
+.socials > div {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  color: white;
+  transition: 0.3s;
+}
+.socials > div:hover {
+  transform: scale(1.2);
+}
+.socials .github {
+  background: #214633;
+  right: 80px;
+  bottom: 0;
+}
+.socials .email {
+  background: #fabc2a;
+  right: 77px;
+  bottom: 45px;
+}
+.socials .instagram {
+  background: #db5fc0;
+  right: 45px;
+  bottom: 77px;
+}
+.socials .twitter {
+  background: rgb(15, 220, 247);
+  right: 0px;
+  bottom: 80px;
+}
+.socials .linkedin {
+  background: #7cabc5;
+  right: -35px;
+  bottom: 53px;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-family: "Outfit", sans-serif;
+    position: absolute;
+  }
+
+  div.content {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+  }
+  .profile-picture {
+    margin-top: -150px;
+    margin-left: 75px;
+  }
+
+  .intro-hello {
+    position: absolute;
+    margin-top: 50px;
+    text-align: left;
+    display: block;
+  }
+
+  h1 {
+    margin-left: 110px;
+  }
+
+  .intro-hello p {
+    margin-top: 50px;
+    margin-left: 30px;
+    text-align: center;
+    display: block;
+    width: 300px;
+  }
+}

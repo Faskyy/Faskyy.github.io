@@ -81,6 +81,8 @@ a {
   position: relative;
   width: 80px;
   height: 80px;
+  margin-right: 25px;
+  margin-bottom: 25px;
   border-radius: 100%;
   transition: 0.4s;
   box-shadow: 0 0 0 0 #ccbdc5;
@@ -172,28 +174,28 @@ a {
 }
 .socials .github {
   background: #214633;
-  right: 80px;
-  bottom: 0;
+  right: 110px;
+  bottom: 40px;
 }
 .socials .email {
   background: #fabc2a;
-  right: 77px;
-  bottom: 45px;
+  right: 95px;
+  bottom: 85px;
 }
 .socials .instagram {
   background: #db5fc0;
-  right: 45px;
-  bottom: 77px;
+  right: 55px;
+  bottom: 110px;
 }
 .socials .twitter {
   background: rgb(15, 220, 247);
-  right: 0px;
-  bottom: 80px;
+  right: 10px;
+  bottom: 100px;
 }
 .socials .linkedin {
   background: #7cabc5;
-  right: -35px;
-  bottom: 53px;
+  right: -20px;
+  bottom: 63px;
 }
 
 @media only screen and (max-width: 600px) {

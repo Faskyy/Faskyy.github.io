@@ -199,6 +199,7 @@ a {
   bottom: 63px;
 }
 
+
 @media only screen and (max-width: 600px) {
   body {
     font-family: "Outfit", sans-serif;
